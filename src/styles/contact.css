@@ -1,0 +1,148 @@
+.contact-section {
+  width: 100%;
+  padding: 80px 24px;
+  direction: rtl;
+  box-sizing: border-box;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  margin: 0 0 42px;
+  color: #090156;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 700;
+  text-align: right;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+}
+
+/* Right panel */
+.contact-info {
+  min-height: 420px;
+  padding: 42px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 26px rgba(9, 1, 86, 0.1);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.contact-icon,
+.address-sign {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.contact-icon {
+  object-fit: contain;
+}
+
+.address-sign {
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: #090156;
+}
+
+.contact-item h3,
+.contact-social h3 {
+  margin: 0 0 8px;
+  color: #090156;
+  font-size: 1.2rem;
+}
+
+.contact-item p,
+.contact-item a {
+  margin: 0;
+  color: #444;
+  font-size: 1rem;
+  line-height: 2;
+  text-decoration: none;
+}
+
+.contact-social {
+  padding-top: 25px;
+  border-top: 1px solid #e6e6ee;
+}
+
+.social-links {
+  display: flex;
+  gap: 14px;
+}
+
+.social-links a {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f0f0f8;
+  transition: 0.25s ease;
+}
+
+.social-links a:hover {
+  background: #dedbf7;
+  transform: translateY(-4px);
+}
+
+.social-links img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+/* Left map panel */
+.map-card {
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 8px 26px rgba(9, 1, 86, 0.1);
+}
+
+.map-card iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 55px 18px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    min-height: auto;
+    padding: 30px 24px;
+  }
+
+  .map-card,
+  .map-card iframe {
+    min-height: 340px;
+  }
+}

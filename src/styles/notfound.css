@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+.notfound-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 32px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(9, 1, 86, 0.16), transparent 40%),
+    #ececec;
+  font-family: myfont, sans-serif;
+}
+
+.notfound-card {
+  width: min(640px, 100%);
+  padding: 48px;
+  border: 1px solid rgba(9, 1, 86, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 45px rgba(9, 1, 86, 0.15);
+  text-align: center;
+}
+
+.notfound-logo {
+  display: inline-block;
+  width: 150px;
+  height: 90px;
+  margin-bottom: 16px;
+}
+
+.notfound-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.notfound-code {
+  margin: 0;
+  color: #090156;
+  font-family: sans-serif;
+  font-size: clamp(5rem, 15vw, 9rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 4px;
+}
+
+.notfound-card h1 {
+  margin: 20px 0 12px;
+  color: #090156;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 900;
+}
+
+.notfound-description {
+  max-width: 460px;
+  margin: 25px auto;
+  color: #444;
+  font-size: clamp(1rem, 1vw, 1.15rem);
+  line-height: 2;
+}
+
+.notfound-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 30px;
+  padding: 12px 24px;
+  border-radius: 9px;
+  color: #fff;
+  background: #090156;
+  font-size: 1rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+
+.notfound-button:hover {
+  background: #1b0e9b;
+  transform: translateY(-3px);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .notfound-page {
+    padding: 24px;
+  }
+
+  .notfound-card {
+    padding: 40px 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .notfound-page {
+    padding: 16px;
+  }
+
+  .notfound-card {
+    padding: 32px 18px;
+    border-radius: 18px;
+  }
+
+  .notfound-logo {
+    width: 120px;
+    height: 72px;
+  }
+
+  .notfound-card h1 {
+    margin-top: 16px;
+  }
+
+  .notfound-button {
+    width: 100%;
+    margin-top: 24px;
+  }
+}
