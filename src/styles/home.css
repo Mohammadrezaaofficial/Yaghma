@@ -516,7 +516,11 @@
   .products-section {
     padding: 30px 7% 70px;
   }
-
+  .products-section h2 {
+    text-align: right;
+    position: relative;
+    right: 5%;
+  }
   .products-grid {
     grid-template-columns: 1fr;
     gap: 22px;
@@ -525,7 +529,14 @@
   .product-card h3 {
     min-height: auto;
   }
-
+  .extra-info{
+    font-size: small;
+    width: 100%;
+    direction: rtl;
+    text-align: right;
+    position: relative;
+    right: -150px;
+  }
   .footer-content {
     flex-direction: column;
     gap: 30px;

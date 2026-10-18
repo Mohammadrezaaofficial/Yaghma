@@ -6,3 +6,14 @@ h1 {
   text-align: right;
   direction: rtl;
 }
+@media (max-width: 600px) {
+  h1 {
+    position: relative;
+    top: 100px;
+    right: 10px;
+    font-size: large;
+    place-items: center;
+    text-align: right;
+    direction: rtl;
+  }
+}
