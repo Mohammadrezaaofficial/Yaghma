@@ -58,4 +58,5 @@ createRoot(document.getElementById("root")).render(
       <Route path="*" element={<NotFound />} />
     </Routes>
   </>
+  </Router>  
 );
