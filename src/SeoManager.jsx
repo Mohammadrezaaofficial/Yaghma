@@ -52,7 +52,7 @@ export default function SeoManager() {
     const canonicalUrl = `${SITE_URL}${path === "/" ? "/" : path}`;
 
     document.documentElement.lang = "fa";
-    document.documentElement.dir = "rtl";
+    document.documentElement.dir = "ltr";
     document.title = metadata.title;
 
     setMeta("name", "description", metadata.description);
