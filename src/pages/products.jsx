@@ -40,6 +40,15 @@ function Products() {
   return (
     <section className="products-section" dir="rtl">
       <div className="products-container">
+        <header className="products-intro">
+          <h1>محصولات چهارچوب PVC و UPVC یغما</h1>
+          <p>
+            یغما صنعت آرتا پروفیل تولیدکننده انواع پروفیل چهارچوب پی وی سی و یو پی وی سی
+            برای کاربردهای ساختمانی است. در این صفحه می‌توانید چهارچوب طرح فرانسه،
+            چهارچوب روکوب‌دار و دیگر محصولات پلیمری مجموعه را همراه با توضیحات هر محصول
+            بررسی کنید. برای انتخاب، به نوع پروفیل، رنگ و مدل موردنیاز پروژه توجه کنید.
+          </p>
+        </header>
         <div className="products-list">
           {products.map((product) => (
             <article className="product-row" key={product.id}>
@@ -48,7 +57,7 @@ function Products() {
               </div>
 
               <div className="product-content">
-                <h3>{product.name}</h3>
+                <h2>{product.name}</h2>
                 <p>{product.description}</p>
               </div>
             </article>
