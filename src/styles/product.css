@@ -10,6 +10,27 @@
   margin: 0 auto;
 }
 
+.products-intro {
+  margin: 0 0 clamp(28px, 4vw, 48px);
+  text-align: right;
+}
+
+.products-intro h1 {
+  margin: 0 0 16px;
+  color: #090156;
+  font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.products-intro p {
+  max-width: 1000px;
+  margin: 0;
+  color: #333;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 2.1;
+}
+
 .products-list {
   display: flex;
   flex-direction: column;
@@ -61,7 +82,7 @@
   text-align: right;
 }
 
-.product-content h3 {
+.product-content h2 {
   margin: 0 0 16px;
   color: #090156;
   font-size: clamp(1.3rem, 2.2vw, 2rem);
@@ -114,7 +135,7 @@
     aspect-ratio: 16 / 10;
   }
 
-  .product-content h3 {
+  .product-content h2 {
     margin-bottom: 10px;
   }
 
