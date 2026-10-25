@@ -10,6 +10,7 @@
 /* Slider */
 
 .slider {
+  direction: ltr;
   position: relative;
   width: min(1380px, calc(100% - 64px));
   min-height: clamp(430px, 55vw, 620px);
@@ -69,6 +70,8 @@
 }
 
 .slider__arrow {
+  direction: ltr;
+  font-family: myfont, sans-serif;
   position: absolute;
   z-index: 2;
   top: 50%;
@@ -101,6 +104,7 @@
 }
 
 .slider__dots {
+  direction: ltr;
   position: absolute;
   z-index: 2;
   bottom: 24px;
