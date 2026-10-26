@@ -61,7 +61,7 @@ const faqs = [
 
 function Products() {
   return (
-    <section className="products-section" dir="rtl">
+    <section className="products-page-section" dir="rtl">
       <div className="products-container">
         <header className="products-intro">
           <h1>تولید و عرضه چهارچوب یو پی وی سی، UPVC و PVC</h1>
