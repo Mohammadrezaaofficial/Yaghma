@@ -1,4 +1,4 @@
-.products-section {
+.products-page-section {
   width: 100%;
   padding: clamp(48px, 7vw, 88px) 24px;
   direction: rtl;
@@ -16,6 +16,12 @@
 }
 
 .products-intro h1 {
+  position: static;
+  inset: auto;
+  transform: none;
+  width: 100%;
+  text-align: right;
+  overflow-wrap: anywhere;
   margin: 0 0 16px;
   color: #090156;
   font-size: clamp(1.8rem, 3.5vw, 2.7rem);
@@ -39,7 +45,7 @@
 
 .product-row {
   display: grid;
-  grid-template-columns: minmax(280px, 42%) 1fr;
+  grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
   align-items: center;
   gap: clamp(24px, 4vw, 52px);
   padding: clamp(16px, 2.2vw, 26px);
@@ -81,6 +87,12 @@
 }
 
 .product-content h2 {
+  position: static;
+  inset: auto;
+  transform: none;
+  width: 100%;
+  text-align: right;
+  overflow-wrap: anywhere;
   margin: 0 0 16px;
   color: #090156;
   font-size: clamp(1.3rem, 2.2vw, 2rem);
@@ -133,19 +145,19 @@
 
 /* Tablet */
 @media (max-width: 900px) {
-  .products-section {
+  .products-page-section {
     padding-inline: 20px;
   }
 
   .product-row {
-    grid-template-columns: minmax(230px, 40%) 1fr;
+    grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
     gap: 28px;
   }
 }
 
 /* Mobile */
 @media (max-width: 650px) {
-  .products-section {
+  .products-page-section {
     padding: 48px 16px;
   }
 
@@ -170,7 +182,7 @@
 
 /* Small mobile */
 @media (max-width: 380px) {
-  .products-section {
+  .products-page-section {
     padding-inline: 12px;
   }
 
@@ -181,8 +193,8 @@
 
 
 /* Keep product-page headings isolated from the homepage product-section styles. */
-.products-section .product-content h2,
-.products-section .products-faq > h2 {
+.products-page-section .product-content h2,
+.products-page-section .products-faq > h2 {
   position: static;
   right: auto;
   inset-inline: auto;
@@ -190,44 +202,44 @@
   text-align: right;
 }
 
-.products-section {
+.products-page-section {
   width: 100%;
   max-width: 100%;
   margin-inline: auto;
   overflow: visible;
 }
 
-.products-section .products-container {
+.products-page-section .products-container {
   width: min(100%, 1180px);
   max-width: 100%;
   margin-inline: auto;
 }
 
-.products-section .product-row {
+.products-page-section .product-row {
   min-width: 0;
 }
 
-.products-section .product-content,
-.products-section .products-faq,
-.products-section .products-faq-item {
+.products-page-section .product-content,
+.products-page-section .products-faq,
+.products-page-section .products-faq-item {
   min-width: 0;
   overflow-wrap: anywhere;
 }
 
-.products-section .products-faq > h2 {
+.products-page-section .products-faq > h2 {
   font-size: clamp(1.5rem, 2.8vw, 2.1rem);
   font-weight: 900;
   line-height: 1.7;
 }
 
 @media (max-width: 900px) {
-  .products-section .product-row {
+  .products-page-section .product-row {
     grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
   }
 }
 
 @media (max-width: 650px) {
-  .products-section .product-row {
+  .products-page-section .product-row {
     grid-template-columns: minmax(0, 1fr);
   }
 }
