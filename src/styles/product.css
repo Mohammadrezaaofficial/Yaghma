@@ -178,3 +178,56 @@
     padding: 13px;
   }
 }
+
+
+/* Keep product-page headings isolated from the homepage product-section styles. */
+.products-section .product-content h2,
+.products-section .products-faq > h2 {
+  position: static;
+  right: auto;
+  inset-inline: auto;
+  transform: none;
+  text-align: right;
+}
+
+.products-section {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  overflow: visible;
+}
+
+.products-section .products-container {
+  width: min(100%, 1180px);
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.products-section .product-row {
+  min-width: 0;
+}
+
+.products-section .product-content,
+.products-section .products-faq,
+.products-section .products-faq-item {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.products-section .products-faq > h2 {
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 900;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .products-section .product-row {
+    grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .products-section .product-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
