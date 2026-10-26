@@ -55,9 +55,7 @@
   border-radius: 14px;
   background-color: #e9eaf2;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
-  transition:
-    transform 250ms ease,
-    box-shadow 250ms ease;
+  transition: transform 250ms ease, box-shadow 250ms ease;
 }
 
 .product-image-card:hover {
@@ -90,7 +88,8 @@
   line-height: 1.7;
 }
 
-.product-content p {
+.product-content p,
+.products-faq-item p {
   margin: 0;
   color: #333;
   font-size: clamp(1rem, 1.4vw, 1.15rem);
@@ -105,6 +104,31 @@
   font-weight: 700;
   line-height: 2;
   text-align: center;
+}
+
+.products-faq {
+  margin-top: clamp(42px, 6vw, 72px);
+  padding-top: clamp(28px, 4vw, 44px);
+  border-top: 1px solid #e3e4ee;
+}
+
+.products-faq > h2 {
+  margin: 0 0 24px;
+  color: #090156;
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  line-height: 1.7;
+}
+
+.products-faq-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #e8e8ef;
+}
+
+.products-faq-item h3 {
+  margin: 0 0 8px;
+  color: #090156;
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  line-height: 1.8;
 }
 
 /* Tablet */
