@@ -33,6 +33,13 @@ jobs:
       - name: Build website
         run: npm run build
 
+      - name: Generate static HTML entry points for site routes
+        run: |
+          for route in products about contact certificate sale; do
+            mkdir -p "dist/$route"
+            cp dist/index.html "dist/$route/index.html"
+          done
+
       - name: Configure SPA fallback for direct routes
         run: cp dist/index.html dist/404.html
 
