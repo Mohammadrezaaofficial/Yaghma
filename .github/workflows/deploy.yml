@@ -3,6 +3,8 @@ name: Deploy website to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -33,12 +35,8 @@ jobs:
       - name: Build website
         run: npm run build
 
-      - name: Generate static HTML entry points for site routes
-        run: |
-          for route in products about contact certificate sale; do
-            mkdir -p "dist/$route"
-            cp dist/index.html "dist/$route/index.html"
-          done
+      - name: Generate route-specific static HTML
+        run: node scripts/generate-route-html.mjs
 
       - name: Configure SPA fallback for direct routes
         run: cp dist/index.html dist/404.html
@@ -49,6 +47,7 @@ jobs:
           path: dist
 
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:
