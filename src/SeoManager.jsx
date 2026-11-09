@@ -49,7 +49,8 @@ export default function SeoManager() {
       title: "صفحه پیدا نشد | یغما صنعت آرتا پروفیل",
       description: "صفحه موردنظر در وب‌سایت یغما صنعت آرتا پروفیل پیدا نشد.",
     };
-    const canonicalUrl = `${SITE_URL}${path === "/" ? "/" : path}`;
+    // Directory URLs are the canonical form served by GitHub Pages.
+    const canonicalUrl = path === "/" ? `${SITE_URL}/` : `${SITE_URL}${path}/`;
 
     document.documentElement.lang = "fa";
     document.documentElement.dir = "rtl";
