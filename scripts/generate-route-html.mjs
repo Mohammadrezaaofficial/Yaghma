@@ -119,60 +119,32 @@ try {
   }
 
   function addStructuredData(html, route) {
-    const organization = {
+    if (route.path !== "/products") return html;
+
+    const breadcrumb = {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "یغما صنعت آرتا پروفیل",
-      url: `${siteUrl}/`,
-      description:
-        "تولیدکننده پروفیل چهارچوب PVC و UPVC، چهارچوب طرح فرانسوی و محصولات پلیمری ساختمانی.",
-      telephone: "+989145766503",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "تبریز، شهرک سلیمی، خیابان صنعت ۱۴، پلاک ۱۳۶۲",
-        addressCountry: "IR",
-      },
-      sameAs: [
-        "https://www.instagram.com/yaghmairanco",
-        "https://t.me/Yaghmairanco",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "خانه",
+          item: `${siteUrl}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "محصولات",
+          item: `${siteUrl}/products/`,
+        },
       ],
     };
 
-    const structuredData = [organization];
-
-    if (route.path === "/products") {
-      structuredData.push({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "خانه",
-            item: `${siteUrl}/`,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "محصولات",
-            item: `${siteUrl}/products/`,
-          },
-        ],
-      });
-    }
-
-    const scripts = structuredData
-      .map(
-        (item) =>
-          `<script type="application/ld+json">${JSON.stringify(item)}</script>`,
-      )
-      .join("\n");
-
-    return html.replace("</head>", `${scripts}\n</head>`);
+    const script = `<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`;
+    return html.replace("</head>", `${script}\n</head>`);
   }
 
   for (const route of routes) {
-    const page = components[route.component];
     const routeElements = routes.map((item) =>
       React.createElement(Route, {
         key: item.path,
@@ -213,8 +185,15 @@ try {
       "root element",
     );
 
-    const canonical = route.path === "/" ? `${siteUrl}/` : `${siteUrl}${route.path}/`;
-    html = replaceOne(html, /<title>[^<]*<\/title>/, `<title>${route.title}</title>`, "title");
+    const canonical =
+      route.path === "/" ? `${siteUrl}/` : `${siteUrl}${route.path}/`;
+
+    html = replaceOne(
+      html,
+      /<title>[^<]*<\/title>/,
+      `<title>${route.title}</title>`,
+      "title",
+    );
     html = replaceOne(
       html,
       /<meta name="description" content="[^"]*"\s*\/>/,
