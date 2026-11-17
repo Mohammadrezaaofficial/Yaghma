@@ -5,28 +5,34 @@ const SITE_URL = "https://yaghmacompany.ir";
 
 const pageMetadata = {
   "/": {
-    title: "چهارچوب یو پی وی سی و UPVC | یغما صنعت آرتا پروفیل",
-    description: "یغما صنعت آرتا پروفیل؛ تولیدکننده پروفیل چهارچوب یو پی وی سی، چهارچوب UPVC و PVC، چهارچوب طرح فرانسه و محصولات پلیمری ساختمانی.",
+    title: "تولیدکننده چهارچوب UPVC و PVC | یغما صنعت آرتا پروفیل",
+    description:
+      "یغما صنعت آرتا پروفیل؛ تولیدکننده پروفیل چهارچوب UPVC و PVC، چهارچوب طرح فرانسه و محصولات پلیمری ساختمانی در تبریز.",
   },
   "/about": {
     title: "درباره یغما صنعت آرتا پروفیل | تولید پروفیل UPVC",
-    description: "با یغما صنعت آرتا پروفیل، فعالیت‌ها و محصولات این مجموعه در زمینه تولید پروفیل‌های تخصصی UPVC و چهارچوب‌های پلیمری آشنا شوید.",
+    description:
+      "با یغما صنعت آرتا پروفیل، فعالیت‌ها و محصولات این مجموعه در زمینه تولید پروفیل‌های تخصصی UPVC و چهارچوب‌های پلیمری آشنا شوید.",
   },
   "/products": {
-    title: "چهارچوب UPVC و یو پی وی سی | چهارچوب طرح فرانسه و پلیمری یغما",
-    description: "خرید چهارچوب یو پی وی سی و چهارچوب UPVC از یغما؛ تولیدکننده چهارچوب طرح فرانسه UPVC، چارچوب پلیمری و چهارچوب پی وی سی. استعلام قیمت و مشخصات با تماس مستقیم؛ ارسال سراسر ایران.",
+    title: "خرید چهارچوب UPVC و PVC | چهارچوب طرح فرانسه و پلیمری یغما",
+    description:
+      "مشاهده مدل‌های چهارچوب UPVC، چهارچوب PVC، چهارچوب طرح فرانسه و چهارچوب پلیمری یغما. دریافت مشخصات، ابعاد و قیمت روز از کارخانه و ارسال به سراسر ایران.",
   },
   "/contact": {
     title: "تماس با یغما صنعت آرتا پروفیل | تبریز",
-    description: "اطلاعات تماس و نشانی کارخانه یغما صنعت آرتا پروفیل در شهرک سلیمی تبریز برای ارتباط درباره چهارچوب PVC، UPVC و محصولات پلیمری.",
+    description:
+      "اطلاعات تماس و نشانی کارخانه یغما صنعت آرتا پروفیل در شهرک سلیمی تبریز برای ارتباط درباره چهارچوب PVC، UPVC و محصولات پلیمری.",
   },
   "/certificate": {
     title: "گواهینامه‌ها و مدارک | یغما صنعت آرتا پروفیل",
-    description: "مشاهده گواهینامه‌ها و مدارک منتشرشده شرکت یغما صنعت آرتا پروفیل.",
+    description:
+      "مشاهده گواهینامه‌ها و مدارک منتشرشده شرکت یغما صنعت آرتا پروفیل.",
   },
   "/sale": {
     title: "نمایندگی فروش | یغما صنعت آرتا پروفیل",
-    description: "اطلاعات نمایندگی‌های فروش محصولات یغما صنعت آرتا پروفیل و راه‌های ارتباط با مجموعه.",
+    description:
+      "اطلاعات نمایندگی‌های فروش محصولات یغما صنعت آرتا پروفیل و راه‌های ارتباط با مجموعه.",
   },
 };
 
@@ -49,7 +55,6 @@ export default function SeoManager() {
       title: "صفحه پیدا نشد | یغما صنعت آرتا پروفیل",
       description: "صفحه موردنظر در وب‌سایت یغما صنعت آرتا پروفیل پیدا نشد.",
     };
-    // Directory URLs are the canonical form served by GitHub Pages.
     const canonicalUrl = path === "/" ? `${SITE_URL}/` : `${SITE_URL}${path}/`;
 
     document.documentElement.lang = "fa";
@@ -57,7 +62,11 @@ export default function SeoManager() {
     document.title = metadata.title;
 
     setMeta("name", "description", metadata.description);
-    setMeta("name", "robots", path in pageMetadata ? "index, follow, max-image-preview:large" : "noindex, follow");
+    setMeta(
+      "name",
+      "robots",
+      path in pageMetadata ? "index, follow, max-image-preview:large" : "noindex, follow",
+    );
     setMeta("property", "og:title", metadata.title);
     setMeta("property", "og:description", metadata.description);
     setMeta("property", "og:url", canonicalUrl);
