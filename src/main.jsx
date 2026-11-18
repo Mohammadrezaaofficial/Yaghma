@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { createRoot } from "react-dom/client";
+import { hydrateRoot } from "react-dom/client";
 import SeoManager from "./SeoManager.jsx";
 
 import Home from "./pages/home.jsx";
@@ -11,7 +11,8 @@ import Certificate from "./pages/certificate.jsx";
 import Sale from "./pages/sale.jsx";
 import NotFound from "./pages/notfound.jsx";
 
-createRoot(document.getElementById("root")).render(
+hydrateRoot(
+  document.getElementById("root"),
   <Router>
     <>
       <SeoManager />

@@ -1,0 +1,38 @@
+name: Validate SEO prerender build
+
+on:
+  push:
+    branches:
+      - seo/prerender-product-pages
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production assets
+        run: npm run build
+
+      - name: Prerender route HTML
+        run: node scripts/generate-route-html.mjs
+
+      - name: Verify product page contains server-rendered content
+        run: |
+          test -s dist/products/index.html
+          grep -q "چهارچوب طرح فرانسه UPVC" dist/products/index.html
+          grep -q "چهارچوب پلیمری" dist/products/index.html
+          grep -q 'rel="canonical" href="https://yaghmacompany.ir/products/"' dist/products/index.html
